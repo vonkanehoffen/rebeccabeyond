@@ -1,0 +1,23 @@
+/*!
+ Theme Name:   Rebecca Beyond
+ Theme URI:    http://rebeccabeyond.com
+ Description:  Store Front Child Theme
+ Author:       Kane Clover
+ Author URI:   http://kanec.co.uk
+ Template:     storefront
+ Version:      1.0.0
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Tags:         responsive-layout, accessibility-ready
+ Text Domain:  rebeccabeyond
+*/
+
+body {
+  background: #f00;
+  h1 {
+    color: #f00;
+  }
+  .shit {
+    display: flex;
+  }
+}

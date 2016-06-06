@@ -47,3 +47,9 @@ function rebeccabeyond_font_families($fonts) {
   error_log(print_r( $fonts, true));
   return $fonts;
 }
+
+add_filter('storefront_featured_products_args', function($args) {
+  $args['columns'] = 3;
+  $args['title'] = 'Featured Pieces';
+  return $args;
+});

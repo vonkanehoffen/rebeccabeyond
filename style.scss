@@ -107,7 +107,14 @@ h1, h2 {
 #home-splash {
   background: $primary url('assets/images/home-splash.jpg') top center repeat;
   // clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-  mask: url('assets/images/home-splash-mask.svg') bottom center / cover;
+  // mask: url('assets/images/home-splash-mask.svg') bottom center / cover;
+  &:after {
+    content: ' ';
+    display: block;
+    height: 60px;
+    background: url('assets/images/curve-mask-bottom.svg') bottom center no-repeat;
+    background-size: contain;
+  }
   h1, h2 {
     color: #fff;
     text-align: center;
@@ -126,6 +133,15 @@ h1, h2 {
   }
 
 .site-footer {
-  background: $dark url('assets/images/footer-mask.svg') top center no-repeat;
+  background: $dark; // url('assets/images/footer-mask.svg') top center no-repeat;
+  // background-size: contain;
   color: #fff;
+  padding-top: 0;
+  &:before {
+    content: ' ';
+    display: block;
+    height: 60px;
+    background: url('assets/images/footer-mask.svg') bottom center no-repeat;
+    background-size: contain;
+  }
 }

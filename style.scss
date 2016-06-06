@@ -21,13 +21,14 @@
 @import '../storefront/assets/sass/vendors/font-awesome/mixins';
 
 $dark: #34302b;
-
+$primary: #ad5127;
 
 body {
   font-family: 'Raleway', sans-serif;
 }
-h1 {
+h1, h2 {
   text-transform: uppercase;
+  font-weight: 300;
 }
 
 // Site Header
@@ -101,4 +102,30 @@ h1 {
 .woocommerce-active .site-header .main-navigation {
   width: auto;
   float: right;
+}
+
+#home-splash {
+  background: $primary url('assets/images/home-splash.jpg') top center repeat;
+  // clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  mask: url('assets/images/home-splash-mask.svg') bottom center / cover;
+  h1, h2 {
+    color: #fff;
+    text-align: center;
+  }
+  h1 {
+    font-size: 4.5em;
+    margin-bottom: 15px;
+  }
+  h2 {
+    margin-bottom: 80px;
+  }
+}
+  .home-splash-logo {
+    max-width:200px;
+    margin: 60px auto 20px auto;
+  }
+
+.site-footer {
+  background: $dark url('assets/images/footer-mask.svg') top center no-repeat;
+  color: #fff;
 }

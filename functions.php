@@ -24,6 +24,13 @@ function rebeccabeyond_custom() {
   // remove_action( 'woocommerce_after_shop_loop',        'woocommerce_pagination',                 30 );
   remove_action( 'woocommerce_after_shop_loop',        'storefront_sorting_wrapper_close',       31 );
 
+  // Remove homepage stuff (there's a plugin for this too)
+  remove_action( 'homepage', 'storefront_homepage_content', 10);
+  remove_action( 'homepage', 'storefront_recent_products', 30);
+  remove_action( 'homepage', 'storefront_popular_products', 50);
+  remove_action( 'homepage', 'storefront_on_sale_products', 60);
+  remove_action( 'homepage', 'storefront_best_selling_products', 70);
+
 }
 
 // add_action('wp_enqueue_scripts', 'rebeccabeyond_scripts', 20);
@@ -44,12 +51,39 @@ add_filter('storefront_google_font_families', 'rebeccabeyond_font_families');
 
 function rebeccabeyond_font_families($fonts) {
   $fonts['raleway'] = 'Raleway:300';
-  error_log(print_r( $fonts, true));
   return $fonts;
 }
 
+// Homepage --------------------------------------------------------------------
+
+// 3 column products
 add_filter('storefront_featured_products_args', function($args) {
   $args['columns'] = 3;
   $args['title'] = 'Featured Pieces';
   return $args;
 });
+
+// add_action('homepage', 'rebeccabeyond_home_splash', 9);
+add_action('storefront_before_content', 'rebeccabeyond_home_splash', 10);
+
+function rebeccabeyond_home_splash() {
+  error_log(print_r( "dfgdfgdfgdfg", true));
+  if(is_front_page()) {
+    ?>
+    <div id="home-splash" class="site-content">
+      <div class="col-full">
+        <img src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/logo.svg" alt="" class="home-splash-logo"/>
+        <h1>Rebecca Beyond</h1>
+        <h2 class="site-description"><?php echo bloginfo( 'description' ); ?></h2>
+      </div>
+    </div>
+    <!-- <svg viewbox="0 0 100 100">
+      <defs>
+        <clipPath id="clip4">
+            <ellipse cx="50" cy="50" rx="100" ry="100"></ellipse>
+        </clipPath>
+      </defs>
+    </svg> -->
+    <?php
+  }
+}

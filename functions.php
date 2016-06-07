@@ -21,15 +21,7 @@ function rebeccabeyond_custom() {
   remove_action( 'woocommerce_after_shop_loop',        'storefront_sorting_wrapper',             9 );
   remove_action( 'woocommerce_after_shop_loop',        'woocommerce_catalog_ordering',           10 );
   remove_action( 'woocommerce_after_shop_loop',        'woocommerce_result_count',               20 );
-  // remove_action( 'woocommerce_after_shop_loop',        'woocommerce_pagination',                 30 );
   remove_action( 'woocommerce_after_shop_loop',        'storefront_sorting_wrapper_close',       31 );
-
-  // Remove homepage stuff (there's a plugin for this too)
-  remove_action( 'homepage', 'storefront_homepage_content', 10);
-  remove_action( 'homepage', 'storefront_recent_products', 30);
-  remove_action( 'homepage', 'storefront_popular_products', 50);
-  remove_action( 'homepage', 'storefront_on_sale_products', 60);
-  remove_action( 'homepage', 'storefront_best_selling_products', 70);
 
 }
 

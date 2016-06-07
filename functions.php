@@ -79,3 +79,19 @@ function rebeccabeyond_home_splash() {
     <?php
   }
 }
+
+// Footer ----------------------------------------------------------------------
+
+/**
+ * Display the theme credit
+ *
+ * @return void
+ */
+function storefront_credit() {
+  ?>
+  <div class="site-info">
+    <?php echo esc_html( apply_filters( 'storefront_copyright_text', $content = '&copy; ' . get_bloginfo( 'name' ) . ' ' . date( 'Y' ) ) ); ?>.
+    Site design by <a href="http://kanec.co.uk/">Kane Clover</a>
+  </div><!-- .site-info -->
+  <?php
+}

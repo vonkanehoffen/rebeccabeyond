@@ -46,6 +46,21 @@ function rebeccabeyond_font_families($fonts) {
   return $fonts;
 }
 
+function storefront_primary_navigation() {
+  ?>
+  <nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_html_e( 'Primary Navigation', 'storefront' ); ?>">
+    <?php
+    wp_nav_menu(
+      array(
+        'theme_location'	=> 'primary',
+        'container_class'	=> 'primary-navigation',
+        )
+    );
+    ?>
+  </nav><!-- #site-navigation -->
+  <?php
+}
+
 // Homepage --------------------------------------------------------------------
 
 // 3 column products

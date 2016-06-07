@@ -42,7 +42,7 @@ function storefront_site_branding() {
 add_filter('storefront_google_font_families', 'rebeccabeyond_font_families');
 
 function rebeccabeyond_font_families($fonts) {
-  $fonts['raleway'] = 'Raleway:300';
+  $fonts['raleway'] = 'Raleway:300,600';
   return $fonts;
 }
 
@@ -59,7 +59,6 @@ add_filter('storefront_featured_products_args', function($args) {
 add_action('storefront_before_content', 'rebeccabeyond_home_splash', 10);
 
 function rebeccabeyond_home_splash() {
-  error_log(print_r( "dfgdfgdfgdfg", true));
   if(is_front_page()) {
     ?>
     <div id="home-splash" class="site-content">

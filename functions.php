@@ -23,6 +23,10 @@ function rebeccabeyond_custom() {
   remove_action( 'woocommerce_after_shop_loop',        'woocommerce_result_count',               20 );
   remove_action( 'woocommerce_after_shop_loop',        'storefront_sorting_wrapper_close',       31 );
 
+  // Remove handheld footer bar
+  remove_action( 'storefront_footer',                  'storefront_handheld_footer_bar',         999 );
+
+
 }
 
 // add_action('wp_enqueue_scripts', 'rebeccabeyond_scripts', 20);
@@ -30,6 +34,8 @@ function rebeccabeyond_custom() {
 // function rebeccabeyond_scripts() {
 //   wp_dequeue_style('storefront-style');
 // }
+
+// Header ---------------------------------------------------------------------
 
 function storefront_site_branding() {
   ?>
@@ -47,8 +53,17 @@ function rebeccabeyond_font_families($fonts) {
 }
 
 function storefront_primary_navigation() {
+
+  $cart_count = wp_kses_data( WC()->cart->get_cart_contents_count() );
   ?>
   <nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_html_e( 'Primary Navigation', 'storefront' ); ?>">
+    <?php // Note: Taken from storefront_handheld_footer_bar_cart_link ?>
+    <div class="header-cart">
+      <a class="header-cart-contents <?php echo $cart_count > 0 ? 'has-items' : ''; ?>" href="<?php echo esc_url( WC()->cart->get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'storefront' ); ?>">
+        <span class="count"><?php echo $cart_count;?></span>
+        <i class="fa fa-shopping-basket"></i>
+      </a>
+    </div>
     <?php
     wp_nav_menu(
       array(

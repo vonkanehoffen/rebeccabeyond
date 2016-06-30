@@ -108,6 +108,28 @@ h1, h2, h3, h4 {
   float: right;
 }
 
+
+.header-cart {
+  float: right;
+  padding: 1.618em 1em;
+  line-height: 46px;
+}
+  .header-cart-contents {
+    color: #e6e6e6;
+    padding: 10px !important;
+    border-radius: 18px;
+    // border: 1px solid $primary;
+    &:hover {
+      color: #fff;
+    }
+    .count { display: none; }
+    &.has-items {
+      background: $primary;
+      .count { display: inline; }
+    }
+  }
+
+
 // Home splash -----------------------------------------------------------------
 
 #home-splash {

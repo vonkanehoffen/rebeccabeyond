@@ -40,7 +40,10 @@ function rebeccabeyond_custom() {
 function storefront_site_branding() {
   ?>
   <div class="site-branding">
-    <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+    <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+      <span class="rb-logo"></span>
+      <span class="text"><?php bloginfo( 'name' ); ?></span>
+    </a></h1>
   </div>
   <?php
 }

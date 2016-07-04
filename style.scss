@@ -33,19 +33,16 @@ h1, h2, h3, h4 {
 
 // Site Header -----------------------------------------------------------------
 
-@mixin rb-logo {
-  &::before {
-    content: ' ';
-    display: inline-block;
-    vertical-align: middle;
-    // float: left;
-    width: 2em;
-    height: 2em;
-    margin-right: 10px;
-    background: url(assets/images/logo.svg);
-    background-size: cover;
-  }
+.rb-logo {
+  display: inline-block;
+  vertical-align: middle;
+  width: 2em;
+  height: 2em;
+  margin-right: 10px;
+  background: url(assets/images/logo.svg);
+  background-size: cover;
 }
+
 .site-header {
   background: $dark;
 }
@@ -56,19 +53,25 @@ h1, h2, h3, h4 {
     margin: 0;
     padding: 0;
     color: #fff;
-    @include rb-logo;
     font-weight: 300;
   }
+  .text {
+    display: none;
+  }
 }
+
 .storefront-primary-navigation {
   background: none;
 }
-@media (min-width: 768px) {
+@media (min-width: 830px) {
+  .site-branding h1 .text {
+    display: inline;
+  }
   .site-header {
     padding-top: 0;
     .site-branding {
       margin: 1.618em 0;
-      width: 30%;
+      width: 40%;
     }
   }
   .storefront-primary-navigation {
@@ -76,7 +79,7 @@ h1, h2, h3, h4 {
     padding: 0;
     float: right;
     clear: none;
-    width: 70%;
+    width: 60%;
   }
 }
 
@@ -221,7 +224,7 @@ ul.products li.product {
 }
 
 .footer-logo {
-  @include rb-logo;
+  // @include rb-logo;
   font-size: 23px;
   text-transform: uppercase;
   .site-footer & {

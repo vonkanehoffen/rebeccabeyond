@@ -94,7 +94,7 @@ add_action('storefront_before_content', 'rebeccabeyond_home_splash', 10);
 function rebeccabeyond_home_splash() {
   if(is_front_page()) {
     ?>
-    <div id="home-splash" class="site-content">
+    <div id="home-splash" class="site-content" style="<?php storefront_header_styles(); ?>">
       <div class="col-full">
         <img src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/logo.svg" alt="" class="home-splash-logo"/>
         <h1>Rebecca Beyond</h1>
